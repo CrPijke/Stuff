@@ -14,16 +14,16 @@ class Calculator {
     Scanner num1 = new Scanner(System.in);
     System.out.println("Enter first number");
 
-    float Firstnum = num1.nextInt();
-    System.out.println("First Number is : " + Firstnum);
+    float Firstnum = num1.nextFloat();
+    System.out.println("First Number is : " + formatResult(Firstnum));
 
     //Request Second number
 
     Scanner num2 = new Scanner(System.in); 
     System.out.println("Enter second number");
 
-    float Secondnum = num2.nextInt();
-    System.out.println("Second number is : " + Secondnum);
+    float Secondnum = num2.nextFloat();
+    System.out.println("Second number is : " + formatResult(Secondnum));
 
 
     float x = Firstnum;
@@ -31,16 +31,16 @@ class Calculator {
 
     if (answer1.equals("add")) {
         float sum = addThings(x,y);
-        System.out.println(x + "+" + y + "=" + sum);
+        System.out.println(formatResult(x) + "+" + formatResult(y) + "=" + formatResult(sum));
     } else if (answer1.equals("subtract")) {
         float subtract = subtractThings(x,y);
-        System.out.println(x + "-" + y + "=" + subtract);
+        System.out.println(formatResult(x) + "-" + formatResult(y) + "=" + formatResult(subtract));
     } else if (answer1.equals("multiply")) {
       float multiply = multiplyThings(x, y);
-      System.out.println(x + "*" + y + "=" + multiply);
+      System.out.println(formatResult(x) + "*" + formatResult(y) + "=" + formatResult(multiply));
     } else if (answer1.equals("divide")) {
       float divide = divideThings(x, y);
-      System.out.println(x + "/" + y + "=" + divide);
+      System.out.println(formatResult(x) + "/" + formatResult(y) + "=" + formatResult(divide));
     }
     
 
@@ -65,4 +65,10 @@ class Calculator {
   private static float divideThings(float num1, float num2) {
     return num1 / num2;
   }
+
+  public static String formatResult(float result) {
+    return (result == (int) result)
+            ? String.format("%d", (int) result)
+            : String.valueOf(result);
+}
 }
