@@ -14,7 +14,7 @@ class Calculator {
     Scanner num1 = new Scanner(System.in);
     System.out.println("Enter first number");
 
-    int Firstnum = num1.nextInt();
+    float Firstnum = num1.nextInt();
     System.out.println("First Number is : " + Firstnum);
 
     //Request Second number
@@ -22,24 +22,24 @@ class Calculator {
     Scanner num2 = new Scanner(System.in); 
     System.out.println("Enter second number");
 
-    int Secondnum = num2.nextInt();
+    float Secondnum = num2.nextInt();
     System.out.println("Second number is : " + Secondnum);
 
 
-    int x = Firstnum;
-    int y = Secondnum;
+    float x = Firstnum;
+    float y = Secondnum;
 
     if (answer1.equals("add")) {
-        int sum = addThings(x,y);
+        float sum = addThings(x,y);
         System.out.println(x + "+" + y + "=" + sum);
     } else if (answer1.equals("subtract")) {
-        int subtract = subtractThings(x,y);
+        float subtract = subtractThings(x,y);
         System.out.println(x + "-" + y + "=" + subtract);
     } else if (answer1.equals("multiply")) {
-      int multiply = multiplyThings(x, y);
+      float multiply = multiplyThings(x, y);
       System.out.println(x + "*" + y + "=" + multiply);
     } else if (answer1.equals("divide")) {
-      int divide = divideThings(x, y);
+      float divide = divideThings(x, y);
       System.out.println(x + "/" + y + "=" + divide);
     }
     
@@ -50,19 +50,19 @@ class Calculator {
 
 
   }
-  private static int addThings(int num1, int num2) {
+  private static float addThings(float num1, float num2) {
     return num1 + num2;
   }
 
-  private static int subtractThings(int num1, int num2) {
+  private static float subtractThings(float num1, float num2) {
     return num1 - num2;
   }
 
-  private static int multiplyThings(int num1, int num2) {
+  private static float multiplyThings(float num1, float num2) {
     return num1 * num2;
   }
 
-  private static int divideThings(int num1, int num2) {
+  private static float divideThings(float num1, float num2) {
     return num1 / num2;
   }
 }
